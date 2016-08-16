@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     
+    <title>Trivia</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+   
+      <img src="assets/images/trivia.png" id="img-display"> 
+      <div id="container">
+        <span id="game">
+          <div id="btn-container">
+            <button id="btn-style" onclick="trivia()">Start Trivia</button>
+          </div>
+        </span>
+        <span id="question"></span>
+        
+      </div>
+     
+    <footer>
+      <p>&copy; Lalit Solanki</p>
+    </footer>
+    
+
+   <script>
+     function trivia() {
+
+      var num=30; // length of time to answer , 30s
+      var timeId = setInterval(timer, 1000);
+
+      function timer() {
+        if (num == 0) {
+          clearInterval(timerId);
+          } else {
+            num--;
+            $('#game').html("<h1>Time remaining " + num + " Seconds<h1>");
+            $('#question').html("<h1>Fastest bird on feet</h1>")
+          }
+       }
+      }
+   </script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+   
+  </body>
+</html>
