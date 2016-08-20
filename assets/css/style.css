@@ -5,6 +5,7 @@
 }
 
 #container{
+	position: relative;
 	margin-left: 15%;
 	margin-right: 15%;
 	height:500px;
@@ -18,8 +19,8 @@
 }
 
 #btn-style{
-	padding-left:5%;
-	padding-right:5%;
+	padding-left:10%;
+	padding-right:10%;
 	padding-top:5%;
 	padding-bottom:5%;
 	
@@ -29,4 +30,37 @@ h1{
 	font-size: 30px;
 	text-align: center;
 	display: block;
+}
+h2{
+	font-size: 30px;
+	text-align: left;
+	display: block;
+	font-family: "Times New Roman";
+}
+#quest{
+	margin-left: 150px;
+	margin-top: 20px;
+	color:blue;
+}
+#options{
+	color:blue;
+	font-size: 30px;
+}
+h3{
+	font-size: 30px;
+	text-align: left;
+	display: block;
+	color : green;
+	font-family: "Times New Roman";
+}
+h4{
+	font-size: 30px;
+	text-align: left;
+	display: block;
+	color : red;
+	font-family: "Times New Roman";
+}
+#game{
+	position: absolute;
+	margin-left: 100px;
 }
