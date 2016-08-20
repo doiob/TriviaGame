@@ -13,11 +13,16 @@
 	padding-top: 10px;
 }
 #btn-container{
+	position: relative;
 	display:block;
     text-align: center;
     padding-top:10%;
-}
+   
 
+}
+#btn-position{
+	display:block;
+}
 #btn-style{
 	padding-left:10%;
 	padding-right:10%;
@@ -37,15 +42,6 @@ h2{
 	display: block;
 	font-family: "Times New Roman";
 }
-#quest{
-	margin-left: 150px;
-	margin-top: 20px;
-	color:blue;
-}
-#options{
-	color:blue;
-	font-size: 30px;
-}
 h3{
 	font-size: 30px;
 	text-align: left;
@@ -60,7 +56,22 @@ h4{
 	color : red;
 	font-family: "Times New Roman";
 }
+#quest{
+	margin-left: 150px;
+	margin-top: 20px;
+	color:blue;
+}
+#options{
+	color:blue;
+	font-size: 30px;
+}
+
 #game{
 	position: absolute;
-	margin-left: 100px;
+	margin-left:15%;
+	height:80%;
+	width:80%;
+}
+#final{
+	margin-top:40%;
 }

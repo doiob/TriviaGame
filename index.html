@@ -1,132 +1,35 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
      
-    <title>Trivia</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
+	<title>Trivia</title>
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
    
-      <img src="assets/images/trivia.png" id="img-display"> 
-      <div id="container">
-        <div id="game">
-          <div id="btn-container">
-            <button id="btn-style" onclick="trivia()">Start Trivia</button>
-          </div>
-          <span id="quest"></span>
-            <form action="">
-                <span id="options"></span>
-                <span id="result"></span>
-            </form>
-           </div> 
-      </div>
+	<img src="assets/images/trivia.png" id="img-display"> 
+	<div id="container">
+		<div id="game">
+			<div id="btn-container">
+					<button id="btn-style" onclick="trivia()">Start Trivia</button>
+			</div>
+			<span id="quest"></span>
+			<form action="">
+				<span id="options"></span>
+				<span id="result"></span>
+			</form>
+		</div> 
+	</div>
      
-    <footer>
-      <p>&copy; Lalit Solanki</p>
-    </footer>
+	<footer>
+		<p>&copy; Lalit Solanki</p>
+	</footer>
     
 
-   <script>
-   var database = {
-    questions  : ["Inside which HTML element do we put the JavaScript?", "The external JavaScript file must contain the script tag","Which event occurs when the user clicks on an HTML element?"],
-    answers   :["script","false","click"],
-    options   : [["script","javascript","js","body"],["True","false"],["onmouseclick","click","onmouseover","on.click"]]
-     
-   }
-   var index = 0;
-   var mytime=0;
-   var timerId;
-   var counter =0;
-   var totalScore=0;
-
-     function trivia() {
-     	counter++;
-     	quizTime=5;
-     	mytime=quizTime;
-
-        $('#btn-container').html("<h1>Time remaining " + quizTime + " Seconds<h1>");
-        setTimer(quizTime);
-        $('#quest').html("<h2>"+database.questions[index]+"</h2>")
-	    $('#options').html(radioButtons(index));
-
-	    
-    }
-      function checkAnswer()
-      {
-      	clearInterval(timerId);
-      	mytime=0;
-      	var value = $("input[name=ans]:checked").val();
-		if ( ( value === database.answers[index] ) )
-		{
-			
-	      	 $('#result').html("<h3>"+ value + " was Correct !!</h3>");
-			 mytime= 0;
-			 totalScore++;
-		}
-        else
-        {
-		  	if ( typeof ($("input[name=ans]:checked") ) != "undefined"  )
-		  	{
-		  		$('#result').html("<h4>"+ value + " was Wrong !!</h4>")
-				mytime = 0;
-			}
-        }
-        index++;
-        if ( counter < database.questions.length)
-        {
-        	trivia();
-        }
-       else
-		        {
-		        	$('#game').html("<h3> Total correct " + totalScore + " out of " + database.questions.length+ "</h3>")
-		        }
-      }
-       
-      function setTimer(num)
-      {
-        // num = length of time to answer , 30s
-        timerId = setInterval(timer, 1000);
-        function timer() {
-           
-
-          if (mytime == 0) {
-          	$('#result').html("<h4> Sorry Time is up!!</h4>")
-            clearInterval(timerId);
-	            index++;
-	            if ( counter < database.questions.length)
-		        {
-		        	trivia();
-		        }
-
-            } else {
-              mytime--;
-              $('#btn-container').html("<h1>Time remaining " + mytime + " Seconds<h1>");
-            }
-            
-        } 
-      }
-
-      function radioButtons(idx)
-      {
-      	 var i = 0 ; 
-      	 var str=""
-      	  for(i=0;i<database.options[idx].length;i++)
-      	  {
-      	  		str = str + '<input id="rb" type="radio" name="ans" value="'+database.options[idx][i]+'" onclick="checkAnswer()">'+database.options[idx][i]+'<br>' 
-      	  }
-      	  return ( str );
-      }
-      function sleep(sec)
-      {
-      	var waitTime = new Date().getTime() + ( sec * 1000);
-			    while (new Date().getTime() <  waitTime);
-		$('#result').html("<h3>New quest</h3>");
-      }
-   </script>
+   <script src="assets/javascript/app.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    
-   
-  </body>
+</body>
 </html>
